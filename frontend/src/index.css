@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #5F4A8B;
+    --secondary: #FEFACD;
+    --accent: #FEFACD;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    @apply bg-[#FEFACD] text-gray-900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.025em;
+    @apply text-[#5F4A8B];
+    /* Default headings to Ultra Violet */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button Styles */
+.btn {
+    @apply px-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 active:scale-95;
+}
+
+.btn-primary {
+    background: #5F4A8B;
+    color: white;
+    @apply shadow-lg;
+}
+
+.btn-primary:hover {
+    background: #4a396d;
+    box-shadow: 0 10px 15px -3px rgba(95, 74, 139, 0.3);
+}
+
+.btn-secondary {
+    background: #FEFACD;
+    color: #5F4A8B;
+    @apply shadow-lg;
+}
+
+.btn-secondary:hover {
+    background: #fdf7b0;
+    color: #4a396d;
+    box-shadow: 0 10px 15px -3px rgba(254, 250, 205, 0.3);
+}
+
+.btn-outline {
+    @apply border-2;
+    border-color: #5F4A8B;
+    color: #5F4A8B;
+}
+
+.btn-outline:hover {
+    background: #5F4A8B;
+    color: white;
+}
